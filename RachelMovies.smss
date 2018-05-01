@@ -1,0 +1,16 @@
+#Changing File Content for engine
+#Fri Apr 27 15:52:22 EDT 2018
+CONNECTION_URL=jdbc\:h2\:nio\:@BaseFolder@/db/@ENGINE@/database;query_timeout\=180000;early_filter\=true;query_cache_size\=24;cache_size\=32768
+ENGINE_TYPE=prerna.engine.impl.rdbms.RDBMSNativeEngine
+SOLR_RELOAD=false
+RDBMS_INSIGHTS=db/@engine@/insights_database
+ENGINE=RachelMovies
+Base=Properties 
+OWL=db/@engine@/MovieScores_OWL.OWL
+DRIVER=org.h2.Driver
+RDBMS_TYPE=H2_DB
+USERNAME=sa
+PIXEL_UPDATE=true
+USE_OUTER_JOINS=false
+HIDDEN_DATABASE=false
+PASSWORD=
