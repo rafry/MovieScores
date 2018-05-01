@@ -1,0 +1,8 @@
+{
+  "layout": "Grid",
+  "rdbmsId": "34ee4ee4-24ae-4505-b787-26504b2d0019",
+  "hidden": false,
+  "engine": "MovieScores",
+  "insightName": "Grid",
+  "recipe": "AddPanel ( 0 ) ;Panel ( 0 ) | AddPanelEvents ( { \"onSingleClick\" : { \"Unfilter\" : [ { \"panel\" : \"\" , \"query\" : \"\u003cencode\u003eUnfilterFrame(\u003cSelectedColumn\u003e);\u003c/encode\u003e\" , \"options\" : { } , \"refresh\" : false , \"default\" : true , \"disabledVisuals\" : [ \"Grid\" , \"Sunburst\" ] , \"disabled\" : false } ] } , \"onBrush\" : { \"Filter\" : [ { \"panel\" : \"\" , \"query\" : \"\u003cencode\u003eif(IsEmpty(\u003cSelectedValues\u003e), UnfilterFrame(\u003cSelectedColumn\u003e), SetFrameFilter(\u003cSelectedColumn\u003e\u003d\u003d\u003cSelectedValues\u003e));\u003c/encode\u003e\" , \"options\" : { } , \"refresh\" : false , \"default\" : true , \"disabled\" : false } ] } } ) ;Panel ( 0 ) | RetrievePanelEvents ( ) ;Panel ( 0 ) | SetPanelView ( \"visualization\" , \"\u003cencode\u003e{\"type\":\"echarts\"}\u003c/encode\u003e\" ) ;Panel ( 0 ) | SetPanelView ( \"federate-view\" , \"\u003cencode\u003e{\"core_engine\":\"MovieScores\"}\u003c/encode\u003e\" ) ;CreateFrame ( GRID ) .as ( [ \u0027FRAME453364\u0027 ] ) ;Database ( MovieScores ) | Select ( MOVIEADVANCEDFEDERATECSV , MOVIEADVANCEDFEDERATECSV__Film , MOVIEADVANCEDFEDERATECSV__Review , MOVIEADVANCEDFEDERATECSV__Score ) .as ( [ MOVIEADVANCEDFEDERATECSV , Film , Review , Score ] ) | Import ( ) ;Panel ( 0 ) | SetPanelView ( \"visualization\" ) ;Frame ( ) | QueryAll ( ) | AutoTaskOptions ( panel \u003d [ \"0\" ] , layout \u003d [ \"Grid\" ] ) | Collect ( 500 ) ;Panel ( 0 ) | SetPanelView ( \"visualization\" ) ;Panel(0)|AddPanelOrnaments({\"showMenu\":true});Panel(0)|RetrievePanelOrnaments(\"showMenu\");"
+}
